@@ -1,0 +1,43 @@
+/* Minimal CSS Reset *//
+
+* {
+    box-sizing: border-box;
+  }
+  
+/* Set up a CSS Grid for my primary HTML elements */
+
+  body {
+    margin: 0;
+    font-family: Helvetica;
+    display: grid;
+    grid-template-columns: 3fr 2fr;
+    grid-template-rows: 50px 1fr 30px;
+    height: 100vh;
+    gap: 5px;
+  }
+
+  nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: black;
+  }
+
+  h1 {
+    color: white;
+  }
+
+  #search {
+    width: 175px;
+    height: 40px;
+    font-size: 20px;
+  }
+
+  #find {
+    width: 125px;
+    height: 75px;
+  }
+
+  nav, footer {
+      grid-column: span 2;
+  }
