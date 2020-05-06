@@ -70,6 +70,14 @@ function getBand(evt) {
                 url: 'http://ws.audioscrobbler.com/2.0/?method=artist.gettopalbums&artist=' + userInput +'&api_key=32f924ae8e17d58763e024385d61626d&format=json'
             }).then(function(albumData) {
                 console.log(albumData);
+                for(let j=0; j<albumData.topalbums.album.length && j<5; j++) {
+                    console.log(albumData.topalbums.album[j].name);
+                    let newLiElement = document.createElement('li');
+                    let topAlbumName = albumData.topalbums.album[j].name;
+                    let topAlbumLink = albumData.topalbums.album[j].url;
+                    newLiElement.innerHTML =  `<a href="${topAlbumLink}">${topAlbumName}</a>`;
+                    ulEl.appendChild(newLiElement);
+                }
             }, function(error) {
                 console.log(error);
             });
