@@ -69,6 +69,7 @@ function getBand(evt) {
             $.ajax({
                 url: 'https://ws.audioscrobbler.com/2.0/?method=artist.gettopalbums&artist=' + userInput +'&api_key=32f924ae8e17d58763e024385d61626d&format=json'
             }).then(function(albumData) {
+                console.log('Hi');
                 for(let j=0; j<albumData.topalbums.album.length && j<5; j++) {
                     let newLiElement = document.createElement('li');
                     let topAlbumName = albumData.topalbums.album[j].name;
