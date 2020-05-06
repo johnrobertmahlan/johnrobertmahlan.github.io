@@ -47,8 +47,8 @@ function getBand(evt) {
         h1El.innerHTML = name;
         pEl.innerHTML = bio;
         
-        // Generate buttons that allow the user to find more information about the band they searched for
-        firstButtonEl = document.createElement('button');
+        // Generate a button to allow the user to find artists similar to the one they searched for
+        let firstButtonEl = document.createElement('button');
         firstButtonEl.textContent = 'Find Similar Artists!'
         firstButtonEl.addEventListener('click', function() {
             for(let i=0; i<data.artist.similar.artist.length; i++) {
@@ -60,8 +60,20 @@ function getBand(evt) {
             }
         })
         divEl.appendChild(firstButtonEl);
+
+
+        // Generate a button to allow the user to find the top albums from the artist they searched for
         let secondButtonEl = document.createElement('button');
         secondButtonEl.textContent = `Find  ${name}'s  Top Albums!`
+        secondButtonEl.addEventListener('click', function() {
+            $.ajax({
+                url: 'http://ws.audioscrobbler.com/2.0/?method=artist.gettopalbums&artist=' + userInput +'&api_key=32f924ae8e17d58763e024385d61626d&format=json'
+            }).then(function(albumData) {
+                console.log(albumData);
+            }, function(error) {
+                console.log(error);
+            });
+        });
         divEl.appendChild(secondButtonEl);
         let thirdButtonEl = document.createElement('button');
         thirdButtonEl.textContent = `Find ${name}'s Top Tracks!`
