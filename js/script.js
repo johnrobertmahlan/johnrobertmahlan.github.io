@@ -7,6 +7,7 @@
 
 let userInput; // the user of this app should be able to enter any band to get information about that band
 
+let name; // when the user searches for a band, I want its name displayed in the main content
 
 
 
@@ -14,6 +15,7 @@ let userInput; // the user of this app should be able to enter any band to get i
 
 const $input = $('input[type="text"]')
 
+const mainEl = document.getElementById('main');
 
 
 // Event Listeners
@@ -35,8 +37,13 @@ function getBand(evt) {
     $.ajax({
         url:  'http://ws.audioscrobbler.com/2.0/?method=artist.getinfo&artist=' + userInput +'&api_key=32f924ae8e17d58763e024385d61626d&format=json'
     }).then(function(data) {
-        console.log(data);
+        let newH1El = document.createElement('h1');
+        newH1El.innerHTML  = data.artist.name;
+        mainEl.appendChild(newH1El);
+        let newpEl = document.createElement('p');
+        newpEl.innerHTML = data.artist.bio.summary;
+        mainEl.appendChild(newpEl);
     }, function(error) {
-        console.log(error)
+        console.log(error) 
     })
 };
