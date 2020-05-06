@@ -87,6 +87,13 @@ function getBand(evt) {
         // Generate a button to allow the user to find the top songs from the artist they searched for
         let thirdButtonEl = document.createElement('button');
         thirdButtonEl.textContent = `Find ${name}'s Top Tracks!`
+        thirdButtonEl.addEventListener('click', function() {
+            $.ajax({
+                url: 'https://ws.audioscrobbler.com/2.0/?method=artist.gettoptracks&artist=' + userInput +'&api_key=32f924ae8e17d58763e024385d61626d&format=json'
+            }).then(function(songData)  {
+                console.log(songData);
+            })
+        })
         divEl.appendChild(thirdButtonEl);
     }, function(error) {
         console.log(error) 
