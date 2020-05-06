@@ -6,55 +6,67 @@
   
 /* Set up a CSS Grid for my primary HTML elements */
 
-  body {
+body {
     margin: 0;
     font-family: Helvetica;
     display: grid;
-    grid-template-columns: 3fr 2fr;
+    grid-template-columns: 4fr 1fr;
     grid-template-rows: 50px 1fr 30px;
     height: 100vh;
     gap: 5px;
-  }
+}
 
   /* Turn my nav bar/header into a flexbox */
 
-  nav {
+nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
     background-color: black;
-  }
+}
 
 /* Styling for nav bar/header */
 
-  #title {
+#title {
     color: white;
-  }
+}
 
-  #search {
+#search {
     width: 175px;
     height: 40px;
     font-size: 20px;
     background-color: lightgray;
     border-radius: 20px;
-  }
+}
 
-  #find {
+#find {
     width: 50px;
     background-color: lightgray;
     border-radius: 20px;
-  }
+}
 
-  nav, footer {
-      grid-column: span 2;
-  }
+nav, footer {
+    grid-column: span 2;
+}
 
   /* Turn my main element into a flexbox */
 
-  main {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      margin-top: 75px;
-      text-align: justify;
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 75px;
+    text-align: justify;
+}
+
+#buttons {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  ul {
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
   }
