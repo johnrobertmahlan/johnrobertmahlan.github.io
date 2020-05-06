@@ -7,7 +7,7 @@
 
 let userInput; // the user of this app should be able to enter any band to get information about that band
 
-
+let name, bio;
 
 // Cached Elements
 
@@ -16,6 +16,10 @@ const $input = $('input[type="text"]')
 const mainEl = document.getElementById('main');
 
 const h1El = document.getElementById('greeting');
+
+const pEl = document.getElementById('bio');
+
+const divEl = document.getElementById('buttons');
 
 
 // Event Listeners
@@ -37,10 +41,21 @@ function getBand(evt) {
     $.ajax({
         url:  'http://ws.audioscrobbler.com/2.0/?method=artist.getinfo&artist=' + userInput +'&api_key=32f924ae8e17d58763e024385d61626d&format=json'
     }).then(function(data) {
-        h1El.innerHTML = data.artist.name;
-        let newpEl = document.createElement('p');
-        newpEl.innerHTML = data.artist.bio.summary;
-        mainEl.appendChild(newpEl);
+        name = data.artist.name;
+        bio = data.artist.bio.summary;
+        h1El.innerHTML = name;
+        pEl.innerHTML = bio;
+        
+
+        let firstButtonEl = document.createElement('button');
+        firstButtonEl.textContent = 'Find Similar Artists!'
+        divEl.appendChild(firstButtonEl);
+        let secondButtonEl = document.createElement('button');
+        secondButtonEl.textContent = `Find  ${name}'s  Top Albums!`
+        divEl.appendChild(secondButtonEl);
+        let thirdButtonEl = document.createElement('button');
+        thirdButtonEl.textContent = `Find ${name}'s Top Tracks!`
+        divEl.appendChild(thirdButtonEl);
     }, function(error) {
         console.log(error) 
     })
