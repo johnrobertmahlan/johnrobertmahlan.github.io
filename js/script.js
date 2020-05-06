@@ -21,11 +21,12 @@ const pEl = document.getElementById('bio');
 
 const divEl = document.getElementById('buttons');
 
+const ulEl = document.getElementById('display');
+
 
 // Event Listeners
 
 $('form').on('submit', getBand);
-
 
 
 
@@ -46,9 +47,18 @@ function getBand(evt) {
         h1El.innerHTML = name;
         pEl.innerHTML = bio;
         
-
-        let firstButtonEl = document.createElement('button');
+        // Generate buttons that allow the user to find more information about the band they searched for
+        firstButtonEl = document.createElement('button');
         firstButtonEl.textContent = 'Find Similar Artists!'
+        firstButtonEl.addEventListener('click', function() {
+            for(let i=0; i<data.artist.similar.artist.length; i++) {
+                let newLiElement = document.createElement('li');
+                let similarName = data.artist.similar.artist[i].name;
+                let similarLink = data.artist.similar.artist[i].url;
+                newLiElement.innerHTML = `<a href="${similarLink}">${similarName}</a>`;
+                ulEl.appendChild(newLiElement);
+            }
+        })
         divEl.appendChild(firstButtonEl);
         let secondButtonEl = document.createElement('button');
         secondButtonEl.textContent = `Find  ${name}'s  Top Albums!`
