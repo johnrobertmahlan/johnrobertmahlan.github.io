@@ -21,6 +21,8 @@ const pEl = document.getElementById('bio');
 
 const divEl = document.getElementById('buttons');
 
+const h3El = document.getElementById('extra');
+
 const ulEl = document.getElementById('display');
 
 
@@ -51,6 +53,8 @@ function getBand(evt) {
         let firstButtonEl = document.createElement('button');
         firstButtonEl.textContent = 'Find Similar Artists!'
         firstButtonEl.addEventListener('click', function() {
+            h3El.textContent = "Similar Artists";
+
             for(let i=0; i<data.artist.similar.artist.length; i++) {
                 let newLiElement = document.createElement('li');
                 let similarName = data.artist.similar.artist[i].name;
@@ -66,6 +70,8 @@ function getBand(evt) {
         let secondButtonEl = document.createElement('button');
         secondButtonEl.textContent = `Find  ${name}'s  Top Albums!`
         secondButtonEl.addEventListener('click', function() {
+            h3El.textContent = `Top Albums by ${name}`
+
             $.ajax({
                 url: 'https://ws.audioscrobbler.com/2.0/?method=artist.gettopalbums&artist=' + userInput +'&api_key=32f924ae8e17d58763e024385d61626d&format=json'
             }).then(function(albumData) {
@@ -87,6 +93,8 @@ function getBand(evt) {
         let thirdButtonEl = document.createElement('button');
         thirdButtonEl.textContent = `Find ${name}'s Top Tracks!`
         thirdButtonEl.addEventListener('click', function() {
+            h3El.textContent = `Top Songs by ${name}`;
+
             $.ajax({
                 url: 'https://ws.audioscrobbler.com/2.0/?method=artist.gettoptracks&artist=' + userInput +'&api_key=32f924ae8e17d58763e024385d61626d&format=json'
             }).then(function(songData)  {
