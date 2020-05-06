@@ -31,11 +31,14 @@
     width: 175px;
     height: 40px;
     font-size: 20px;
+    background-color: lightgray;
+    border-radius: 20px;
   }
 
   #find {
-    width: 125px;
-    height: 75px;
+    width: 50px;
+    background-color: lightgray;
+    border-radius: 20px;
   }
 
   nav, footer {
