@@ -72,6 +72,10 @@ h1 {
   color: white;
 }
 
+#greeting:hover {
+  font-style: italic;
+}
+
 p {
   font-family: 'Geo', sans-serif;
   font-size: 25px;
