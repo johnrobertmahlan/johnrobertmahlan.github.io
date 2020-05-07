@@ -50,6 +50,7 @@ function getBand(evt) {
         bio = data.artist.bio.summary;
         h1El.innerHTML = name;
         pEl.innerHTML = bio;
+        divEl.innerHTML = '';
         
         // Generate a button to allow the user to find artists similar to the one they searched for
         let firstButtonEl = document.createElement('button');
