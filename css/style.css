@@ -80,9 +80,15 @@ p {
   margin-right: 20px;
 }
 
-#buttons {
-    display: flex;
-    justify-content: space-between;
+button {
+  background-color: silver;
+  font-family: 'Geo', sans-serif;
+  font-size: 20px;
+  color: black;
+  height: 60px;
+  width: 150px;
+  margin: 40px;
+  border-radius: 10px;
 }
 
 aside {
@@ -105,6 +111,8 @@ aside {
     align-items: center;
     background-color: black;
   }
+
+  /* Styling for links */
 
   a:link {
     color: white;

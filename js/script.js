@@ -1,6 +1,6 @@
 // Constants
 
-
+const baseUrl =  'https://johnrobertmahlan.github.io/'
 
 
 // Variables
@@ -51,7 +51,7 @@ function getBand(evt) {
         
         // Generate a button to allow the user to find artists similar to the one they searched for
         let firstButtonEl = document.createElement('button');
-        firstButtonEl.textContent = 'Find Similar Artists!'
+        firstButtonEl.textContent = 'Similar Artists'
         firstButtonEl.addEventListener('click', function() {
             h3El.textContent = "Similar Artists";
 
@@ -59,7 +59,7 @@ function getBand(evt) {
                 let newLiElement = document.createElement('li');
                 let similarName = data.artist.similar.artist[i].name;
                 let similarLink = data.artist.similar.artist[i].url;
-                newLiElement.innerHTML = `<a href="${similarLink}">${similarName}</a>`;
+                newLiElement.innerHTML = `<a href="${similarLink}" target="_blank">${similarName}</a>`;
                 ulEl.appendChild(newLiElement);
             }
         })
@@ -68,7 +68,7 @@ function getBand(evt) {
 
         // Generate a button to allow the user to find the top albums from the artist they searched for
         let secondButtonEl = document.createElement('button');
-        secondButtonEl.textContent = `Find  ${name}'s  Top Albums!`
+        secondButtonEl.textContent = 'Top Albums'
         secondButtonEl.addEventListener('click', function() {
             h3El.textContent = `Top Albums by ${name}`
 
@@ -79,7 +79,7 @@ function getBand(evt) {
                     let newLiElement = document.createElement('li');
                     let topAlbumName = albumData.topalbums.album[j].name;
                     let topAlbumLink = albumData.topalbums.album[j].url;
-                    newLiElement.innerHTML =  `<a href="${topAlbumLink}">${topAlbumName}</a>`;
+                    newLiElement.innerHTML =  `<a href="${topAlbumLink}" target="_blank">${topAlbumName}</a>`;
                     ulEl.appendChild(newLiElement);
                 }
             }, function(error) {
@@ -91,7 +91,7 @@ function getBand(evt) {
 
         // Generate a button to allow the user to find the top songs from the artist they searched for
         let thirdButtonEl = document.createElement('button');
-        thirdButtonEl.textContent = `Find ${name}'s Top Tracks!`
+        thirdButtonEl.textContent = 'Top Songs'
         thirdButtonEl.addEventListener('click', function() {
             h3El.textContent = `Top Songs by ${name}`;
 

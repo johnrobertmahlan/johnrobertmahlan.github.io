@@ -6,22 +6,21 @@
     <title>Next Music!</title>
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
     <script defer src="./js/script.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Geo&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
-
     <nav>
-        <h2 id="title">NextMusic!</h1>
+        <h1 id="title">NextMusic!</h1>
 
         <form>
-            <input id="search" type="text" placeholder="Search for an artist...">
-            <input id="find" type="submit" value="Go!">
+            <input id="search" type="text" placeholder="Search">
+            <input id="find" type="submit" value="Find!">
         </form>
     </nav>
 
     <main id="main">
-        <!---What I want my page to display on load; this will change when a user runs a search --->
-        <h1 id="greeting">Find Your Next Favorite Band!</h1>
+        <h1 id="greeting"></h1>
         <p id="bio"></p>
         <div id="buttons"></div>
     </main>
@@ -32,7 +31,8 @@
         <ul id="display"></ul>
     </aside>
 
-    <footer></footer>
-    
+    <footer>
+        <p>Designed By <a href="https://github.com/johnrobertmahlan" target="_blank">John Robert Mahlan</a>, Powered by <a href="https://www.last.fm" target="_blank">Audioscrobbler</a></p>
+    </footer> 
 </body>
 </html>
