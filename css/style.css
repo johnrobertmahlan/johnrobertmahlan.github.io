@@ -8,15 +8,15 @@
 
 body {
     margin: 0;
-    font-family: Helvetica;
+    font-family: 'Geo', sans-serif;
     display: grid;
-    grid-template-columns: 4fr 1fr;
-    grid-template-rows: 50px 1fr 30px;
+    grid-template-columns: 3.5fr 1.5fr;
+    grid-template-rows: 50px 1fr 50px;
     height: 100vh;
-    gap: 5px;
+    grid-gap: 5px;
 }
 
-  /* Turn my nav bar/header into a flexbox */
+/* Turn my nav bar/header into a flexbox */
 
 nav {
     display: flex;
@@ -32,17 +32,24 @@ nav {
 }
 
 #search {
-    width: 175px;
-    height: 40px;
-    font-size: 20px;
-    background-color: lightgray;
-    border-radius: 20px;
+  width: 175px;
+  height: 40px;
+  font-size: 30px;
+  font-family: 'Geo', sans-serif;
+  color: black;
+  background-color: silver;
+  border-radius: 20px;
+  padding: auto;
+  text-align: center;
 }
 
 #find {
-    width: 50px;
-    background-color: lightgray;
-    border-radius: 20px;
+  font-family: 'Geo', sans-serif;
+  font-size: 25px;
+  background-color: silver;
+  width: 75px;
+  height: 30px;
+  border-radius: 10px;
 }
 
 nav, footer {
@@ -52,18 +59,61 @@ nav, footer {
   /* Turn my main element into a flexbox */
 
 main {
+    background-color: black;
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 75px;
     text-align: justify;
+}
+
+h1 {
+  font-family: 'Geo', sans-serif;
+  font-size: 50px;
+  color: white;
+}
+
+p {
+  font-family: 'Geo', sans-serif;
+  font-size: 25px;
+  color: white;
+  margin-left: 20px;
+  margin-right: 20px;
 }
 
 #buttons {
     display: flex;
     justify-content: space-between;
-  }
+}
+
+aside {
+  background-color: black;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
 
   ul {
     list-style-type: none;
+  }
+
+  /* Styling for footer */
+
+  footer {
+    display: flex;
+    align-items: center;
+    background-color: black;
+  }
+
+  a:link {
+    color: white;
+  }
+
+  a:visited {
+    color: silver;
+  }
+
+  a:hover {
+    font-weight:
   }
