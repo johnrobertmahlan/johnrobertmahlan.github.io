@@ -28,11 +28,11 @@ I sketched my wireframes by hand. Not being much of an artist, I tried to keep t
 
 There are two wireframes for my project. The first shows what the user will see when they first load the app:
 
-![What the viewer sees when the app loads](https://imgur.com/xIpLROU)
+![What the viewer sees when the app loads](https://i.imgur.com/xIpLROU.jpg)
 
 The second shows what the user will see after they've searched for an artist:
 
-![What the viewer sees after a search](https://imgur.com/2w3fY7A)
+![What the viewer sees after a search](https://i.imgur.com/2w3fY7A.jpg)
 
 ### Construction Strategy
 
