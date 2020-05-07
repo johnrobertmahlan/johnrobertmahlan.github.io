@@ -91,12 +91,18 @@ button {
   border-radius: 10px;
 }
 
+button:hover {
+  height: 75px;
+  width: 175px;
+  font-size: 30px;
+}
+
 aside {
   background-color: black;
   color: white;
+  font-size: 30px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
 }
 
@@ -123,5 +129,5 @@ aside {
   }
 
   a:hover {
-    font-weight:
+    font-size: 125%;
   }
