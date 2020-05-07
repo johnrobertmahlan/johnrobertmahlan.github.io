@@ -9,6 +9,8 @@ let userInput; // the user of this app should be able to enter any band to get i
 
 let name, bio;
 
+let aside = false;
+
 // Cached Elements
 
 const $input = $('input[type="text"]')
@@ -54,6 +56,7 @@ function getBand(evt) {
         firstButtonEl.textContent = 'Similar Artists'
         firstButtonEl.addEventListener('click', function() {
             h3El.textContent = "Similar Artists";
+            ulEl.innerHTML = '';
 
             for(let i=0; i<data.artist.similar.artist.length; i++) {
                 let newLiElement = document.createElement('li');
@@ -70,7 +73,8 @@ function getBand(evt) {
         let secondButtonEl = document.createElement('button');
         secondButtonEl.textContent = 'Top Albums'
         secondButtonEl.addEventListener('click', function() {
-            h3El.textContent = `Top Albums by ${name}`
+            h3El.textContent = `Top Albums by ${name}`;
+            ulEl.innerHTML = '';
 
             $.ajax({
                 url: 'https://ws.audioscrobbler.com/2.0/?method=artist.gettopalbums&artist=' + userInput +'&api_key=32f924ae8e17d58763e024385d61626d&format=json'
@@ -94,6 +98,7 @@ function getBand(evt) {
         thirdButtonEl.textContent = 'Top Songs'
         thirdButtonEl.addEventListener('click', function() {
             h3El.textContent = `Top Songs by ${name}`;
+            ulEl.innerHTML = '';
 
             $.ajax({
                 url: 'https://ws.audioscrobbler.com/2.0/?method=artist.gettoptracks&artist=' + userInput +'&api_key=32f924ae8e17d58763e024385d61626d&format=json'
