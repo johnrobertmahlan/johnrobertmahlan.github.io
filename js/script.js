@@ -1,13 +1,13 @@
 // Constants
 
-const baseUrl =  'https://johnrobertmahlan.github.io/'
+const baseUrl =  'https://johnrobertmahlan.github.io/' // this is my app's homepage
 
 
 // Variables
 
 let userInput; // the user of this app should be able to enter any band to get information about that band
 
-let name, bio, bandData;
+let name, bio, bandData; // these are variables I'll need access to later
 
 
 // Cached Elements
@@ -34,6 +34,14 @@ $('form').on('submit', getBand);
 
 
 // Functions
+
+// This is what I want to be displayed when a user first navigates to the site
+function init() {
+    h1El.innerHTML = "Welcome to NextMusic!";
+    pEl.innerHTML = "Search for an artist above and learn more about them!"
+};
+
+init();
 
 //This is the basic function that my app runs: a user enters a musician and the app accesses the API for information about that musician
 function getBand(evt) {
