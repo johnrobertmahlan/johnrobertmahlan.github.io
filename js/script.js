@@ -99,7 +99,7 @@ function findSimilarArtists() {
         let similarName = bandData.artist.similar.artist[i].name;
         let similarLink = bandData.artist.similar.artist[i].url;
         newLiElement.innerHTML = `<a href="${similarLink}" target="_blank">${similarName}</a>`;
-        //newLiElement.addEventListener('click', updateSearch);
+        //newLiElement.addEventListener('click', updateSearch); I wanted to set a new listener here that would basically update the value of userInput to whichever artist the user clicked, thereby keeping them on my site instead of sending them to last.fm, but it broke my app
         ulEl.appendChild(newLiElement);
     }
 };

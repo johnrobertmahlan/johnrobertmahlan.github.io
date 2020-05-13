@@ -7,28 +7,28 @@
 /* Set up a CSS Grid for my primary HTML elements */
 
 body {
-    margin: 0;
-    font-family: 'Geo', sans-serif;
-    display: grid;
-    grid-template-columns: 3.5fr 1.5fr;
-    grid-template-rows: 50px 1fr 50px;
-    height: 100vh;
-    grid-gap: 5px;
+  margin: 0;
+  font-family: 'Geo', sans-serif;
+  display: grid;
+  grid-template-columns: 3.5fr 1.5fr;
+  grid-template-rows: 50px 1fr 50px;
+  height: 100vh;
+  grid-gap: 5px;
 }
 
 /* Turn my nav bar/header into a flexbox */
 
 nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: black;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: black;
 }
 
 /* Styling for nav bar/header */
 
 #title {
-    color: white;
+  color: white;
 }
 
 #search {
@@ -53,29 +53,25 @@ nav {
 }
 
 nav, footer {
-    grid-column: span 2;
+  grid-column: span 2;
 }
 
-  /* Turn my main element into a flexbox */
+/* Turn my main element into a flexbox */
 
 main {
-    background-color: black;
-    background-image: url("https://i.imgur.com/e4xZCLD.jpg");
-    background-size: cover;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: justify;
+  background-color: black;
+  background-image: url("https://i.imgur.com/e4xZCLD.jpg");
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: justify;
 }
 
 h1 {
   font-family: 'Geo', sans-serif;
   font-size: 50px;
   color: white;
-}
-
-#greeting:hover {
-  font-style: italic;
 }
 
 p {
@@ -114,28 +110,28 @@ aside {
   align-items: center;
 }
 
-  ul {
-    list-style-type: none;
-  }
+ul {
+  list-style-type: none;
+}
 
-  /* Styling for footer */
+/* Styling for footer (including turning footer into a flexbox) */
 
-  footer {
-    display: flex;
-    align-items: center;
-    background-color: black;
-  }
+footer {
+  display: flex;
+  align-items: center;
+  background-color: black;
+}
 
-  /* Styling for links */
+/* Styling for links */
 
-  a:link {
-    color: white;
-  }
+a:link {
+  color: white;
+}
 
-  a:visited {
-    color: silver;
-  }
+a:visited {
+  color: silver;
+}
 
-  a:hover {
-    font-size: 125%;
-  }
+a:hover {
+  font-size: 125%;
+}
