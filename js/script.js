@@ -26,6 +26,8 @@ const h3El = document.getElementById('extra');
 
 const ulEl = document.getElementById('display');
 
+const asideEl = document.getElementById('aside');
+
 
 // Event Listeners
 
@@ -97,6 +99,7 @@ function findSimilarArtists() {
         let similarName = bandData.artist.similar.artist[i].name;
         let similarLink = bandData.artist.similar.artist[i].url;
         newLiElement.innerHTML = `<a href="${similarLink}" target="_blank">${similarName}</a>`;
+        //newLiElement.addEventListener('click', updateSearch);
         ulEl.appendChild(newLiElement);
     }
 };
@@ -132,7 +135,7 @@ function findTopSongs() {
         for(let k=0; k<songData.toptracks.track.length && k<5; k++) {
             let newLiElement = document.createElement('li');
             let topSongName = songData.toptracks.track[k].name;
-            newLiElement.innerHTML = `<a href="https://www.youtube.com/results?search_query=${userInput}${topSongName}">${topSongName}</a>`;
+            newLiElement.innerHTML = `<a href="https://www.youtube.com/results?search_query=${userInput}${topSongName}" target="_blank">${topSongName}</a>`;
             ulEl.appendChild(newLiElement);
         }
     }, function(error)  {
