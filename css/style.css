@@ -29,6 +29,7 @@ nav {
 
 #title {
   color: white;
+  font-style: italic;
 }
 
 #search {
@@ -120,6 +121,7 @@ footer {
   display: flex;
   align-items: center;
   background-color: black;
+  background-size: cover;
 }
 
 /* Styling for links */

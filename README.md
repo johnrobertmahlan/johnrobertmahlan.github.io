@@ -1,6 +1,6 @@
 # NextMusic!
 
-The NextMusic! app is a simple app designed to help users find new music that they will love. Most of us know who our favorite bands are, so this is a great starting point for finding new music. What the NextMusic! app does is allow users to start by searching for their favorite bands and discovering more information about them, and then to find other bands that might appeal to them. Thus, whenever a user searches for a band, they will also be given the ability to find:
+The NextMusic! app is a simple app designed to help users find new music that they will love. Most of us know who our favorite bands are, so this is a great starting point for finding new music. What the NextMusic! app does is allow users to start by searching for their favorite bands. The app then displays some biographical information about the band, while simultaneously generating buttons that allow the user to learn more about that band. In particular, the app provides users with:
 
 * Similar Artists
 * Top Albums By Their Chosen Artist
@@ -21,7 +21,7 @@ The NextMusic! app was built using the following technologies:
 * JavaScript (including jQuery)
 * GoogleFonts
 
-The database was built using the [Last.fm API](https://www.last.fm/api/intro).
+The database uses the [Last.fm API](https://www.last.fm/api/intro).
 
 ### Wireframing
 
@@ -39,19 +39,17 @@ The second shows what the user will see after they've searched for an artist:
 
 I wanted NextMusic! to allow users to search for musicians by name. Several APIs that I found - both concerning music and concerning other topics - required users to search by a hard-to-remember ID number that no ordinary user would have access to. This is why I decided to use Last.fm's API: it allowed users to search for musicians by name, and it was fairly forgiving about its search terms. For example, users can search for bands with multiple words in their name, such as 'Pink Floyd', and the API's method will not return any errors. It also is not case sensitive.
 
-When building the app, my first goal was simply to write code that successfully accessed the API data and presented it on the screen. My thought was once I knew the app *worked*, then I could improve its appearance. 
+When building the app, my first goal was simply to write code that successfully accessed the API data and presented it on the screen. I started by building out the function that allowed users to search for artists by name and find out some biographical information about them. This used Last.fm's `artist.getInfo` method.
 
-I started by building out the function that allowed users to search for artists by name and find out some biographical information about them. This used Last.fm's `artist.getInfo` method.
-
-At that point, I wanted the app to do more. Originally, I thought the app would simply generate a list of artists similar to the one entered by the user, but I decided that once I had that functionality, the app could do more. Using Last.fm's `artist.getSimilar`,  `artist.getTopAlbums`, and `artist.getTopTracks` methods, I constructed buttons that would display this content in a sidebar.
+Originally, I thought that my app would simply display a list of artists similar to the one entered by the user, but I realized quickly that the same functionality that allowed my app to do that would also allow it to do much more. Using Last.fm's `artist.getSimilar`,  `artist.getTopAlbums`, and `artist.getTopTracks` methods, I added buttons that would display the information in question in a sidebar.
 
 ### Design Strategy
 
-My aesthetic goals with this app were to have a simple, sleek, and somewhat futuristic, design. To achieve this, I went with a black background everywhere, and selected a font that seemed to have that futuristic feel. But I decided that the original version of the app was too plain, so I added some background images. Here I was looking for images with bright colors that would contrast sharply with the black background and white text of the rest of the app.
+My aesthetic goals with this app were to have a simple, sleek, and somewhat futuristic, design. To achieve this, I selected a black background for the whole site, and a font that seemed to have that futuristic feel. But I decided that this alone was too plain, so I added some background images. Here I was looking for images with bright colors that would contrast sharply with the black background and white text of the rest of the app.
 
 ### Future Work
 
-I would love to get some other media, both visual and audio, on the app. For example, when a user searches for an artist, I'd love to display an image of that artist. Or when a user decides to find the top songs by the artist they've searched for, I'd love to give them the option to hear those songs. That might require switching APIs, however, as Last.fm's Terms and Conditions do not permit the use of these media. Spotify's API appears to permit their use, but their API appeared too complicated for this first project. For the time being, as a workaround, I've built links to YouTube into the results generated by pressing the 'Top Songs' button on the app.
+I would love to get some other media, both visual and audio, on the app. For example, when a user searches for an artist, I'd love to display an image of that artist. Or when a user decides to find the top songs by the artist they've searched for, I'd love to give them the option to hear those songs. That might require switching APIs, however, as Last.fm's Terms of Service do not permit the use of these media. Spotify's API appears to permit their use, but their API appeared too complicated for this first project. For the time being, as a workaround, I've built links to YouTube into the results generated by pressing the 'Top Songs' button on the app.
 
 Another future goal for the app is to allow the user to search by something other than artist name. Very often we know the name of a song but not the name of the artist who wrote or performed that song, so it might be more useful in some instances to search by song rather than artist. But I was not sure how to build that functionality into the app. Searching by song rather than artist that require a different method to extract data from my chosen API (specifically, the `track.getInfo` method), so I was not sure how to write the necessary AJAX request.
 
