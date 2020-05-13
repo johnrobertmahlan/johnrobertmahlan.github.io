@@ -26,8 +26,6 @@ const h3El = document.getElementById('extra');
 
 const ulEl = document.getElementById('display');
 
-const asideEl = document.getElementById('aside');
-
 
 // Event Listeners
 
@@ -70,6 +68,8 @@ function render() {
     h1El.innerHTML = name;
     pEl.innerHTML = bio;
     divEl.innerHTML = '';
+    h3El.textContent = '';
+    ulEl.innerHTML = '';
 
     // Generate a button to allow the user to find artists similar to the one they searched for
     firstButtonEl = document.createElement('button');
