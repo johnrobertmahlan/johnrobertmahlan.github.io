@@ -1,13 +1,13 @@
 // Constants
 
-const baseUrl =  'https://johnrobertmahlan.github.io/' // this is my app's homepage
+const baseUrl =  'https://johnrobertmahlan.github.io/'
 
 
 // Variables
 
-let userInput; // the user of this app should be able to enter any band to get information about that band
+let userInput;
 
-let name, bio, bandData; // these are variables I'll need access to later
+let name, bio, bandData;
 
 
 // Cached Elements
@@ -132,7 +132,7 @@ function findTopSongs() {
         for(let k=0; k<songData.toptracks.track.length && k<5; k++) {
             let newLiElement = document.createElement('li');
             let topSongName = songData.toptracks.track[k].name;
-            newLiElement.innerHTML = `"${topSongName}"`;
+            newLiElement.innerHTML = `<a href="https://www.youtube.com/results?search_query=${userInput}${topSongName}">${topSongName}</a>`;
             ulEl.appendChild(newLiElement);
         }
     }, function(error)  {
