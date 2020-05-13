@@ -135,7 +135,7 @@ function findTopSongs() {
         for(let k=0; k<songData.toptracks.track.length && k<5; k++) {
             let newLiElement = document.createElement('li');
             let topSongName = songData.toptracks.track[k].name;
-            newLiElement.innerHTML = `<a href="https://www.youtube.com/results?search_query=${userInput}${topSongName}" target="_blank">${topSongName}</a>`;
+            newLiElement.innerHTML = `"<a href="https://www.youtube.com/results?search_query=${userInput}${topSongName}" target="_blank">${topSongName}</a>"`;
             ulEl.appendChild(newLiElement);
         }
     }, function(error)  {
